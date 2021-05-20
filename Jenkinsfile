@@ -4,11 +4,10 @@ pipeline {
   stage('Build') {
    steps {
     echo 'Building..'
-	withMaven(maven: 'mvn_home') {
-    		mvn clean package
-}
-
-   }
+        withMaven(maven: 'mvn_home') {
+                 clean package
+          }
+		}
   }
   stage('Test') {
    steps {
@@ -22,3 +21,4 @@ pipeline {
   }
  }
 }
+
