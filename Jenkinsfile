@@ -4,6 +4,9 @@ pipeline {
   stage('Build') {
    steps {
     echo 'Building..'
+	withMaven(maven: 'mvn_home') {
+    		mvn clean package
+}
 
    }
   }
