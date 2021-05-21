@@ -9,7 +9,8 @@ pipeline {
   }
   stage('Copying the build to docker volume') {
    steps {
-    sh "cp /home/jenkins/workspace/DockerBuild/target/*.war ."
+	sh "sleep 5"
+    sh "cp /home/jenkins/workspace/DockerBuild/target/*.war /home/jenkins/Docker/source/"
    }
   }
   stage('Deploy') {
