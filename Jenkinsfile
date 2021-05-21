@@ -9,9 +9,9 @@ pipeline {
           }
 		}
   }
-  stage('Test') {
+  stage('Copying the build to docker volume') {
    steps {
-    echo 'Testing..'
+    sh "cp /home/jenkins/workspace/DockerBuild/target/*.war ."
    }
   }
   stage('Deploy') {
