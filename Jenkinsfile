@@ -4,9 +4,7 @@ pipeline {
   stage('Build') {
    steps {
     echo 'Building..'
-        withMaven(maven: 'mvn_home') {
-                 clean package
-          }
+		sh "mvn clean package"
 		}
   }
   stage('Copying the build to docker volume') {
@@ -21,4 +19,3 @@ pipeline {
   }
  }
 }
-
